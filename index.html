@@ -52,32 +52,28 @@
 
   <script>
     const posts = [
-      {
-        title: "HTML Basics",
-        code: `<!DOCTYPE html>
+  {
+    title: "HTML Basics",
+    code: `<!DOCTYPE html>
 <html>
   <body>
     <h1>Hello World</h1>
   </body>
 </html>`
-      },
-      {
-        title: "CSS Styling Tricks",
-        code: `body {
+  },
+  {
+    title: "CSS Styling Tricks",
+    code: `body {
   background-color: lightblue;
   font-family: Arial, sans-serif;
 }`
-      },
-      {
-        title: "JavaScript Copy Button",
-        code: `function copyCode() {
-  const code = document.getElementById("codeBlock").innerText;
-  navigator.clipboard.writeText(code).then(() => {
-    alert("Code copied!");
-  });
-}`
-      },
-    ];
+  },
+  {
+    title: "New Code Post",
+    code: `<h1>This is a new example!</h1>`
+  }
+];
+
 
     const postsContainer = document.getElementById("posts");
 
