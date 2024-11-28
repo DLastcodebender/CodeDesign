@@ -11,8 +11,17 @@
       padding: 20px;
       background-color: #f9f9f9;
     }
-    h1 {
+    header {
       text-align: center;
+      padding: 10px 0;
+    }
+    header img {
+      max-width: 120px;
+      border-radius: 50%;
+    }
+    header h1 {
+      margin: 10px 0;
+      font-size: 28px;
       color: #333;
     }
     .post {
@@ -47,33 +56,31 @@
   </style>
 </head>
 <body>
-  <h1>Code Sharing Blog</h1>
+  <header>
+    <img src="https://via.placeholder.com/120" alt="Logo">
+    <h1>My Code Sharing Blog</h1>
+  </header>
   <div id="posts"></div>
 
   <script>
     const posts = [
-  {
-    title: "HTML Basics",
-    code: `<!DOCTYPE html>
+      {
+        title: "HTML Basics",
+        code: `<!DOCTYPE html>
 <html>
   <body>
     <h1>Hello World</h1>
   </body>
 </html>`
-  },
-  {
-    title: "CSS Styling Tricks",
-    code: `body {
+      },
+      {
+        title: "CSS Styling Tricks",
+        code: `body {
   background-color: lightblue;
   font-family: Arial, sans-serif;
 }`
-  },
-  {
-    title: "New Code Post",
-    code: `<h1>This is a new example!</h1>`
-  }
-];
-
+      },
+    ];
 
     const postsContainer = document.getElementById("posts");
 
