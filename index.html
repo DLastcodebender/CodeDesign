@@ -6,7 +6,7 @@
   <title>DLastCodeBender</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
@@ -16,15 +16,30 @@
       background: linear-gradient(90deg, #007bff, #00d4ff);
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
+      line-height: 1.2;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .search-bar {
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    .search-bar input {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #007bff;
+      border-radius: 5px;
     }
     .post {
       background: #fff;
@@ -67,6 +82,14 @@
   <header>
     <h1>DLastCodeBender</h1>
   </header>
+  <div class="search-bar">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search for posts..."
+      oninput="filterPosts()"
+    />
+  </div>
   <div id="posts"></div>
 
   <script>
@@ -87,26 +110,46 @@
   font-family: Arial, sans-serif;
 }`
       },
+      {
+        title: "JavaScript Fundamentals",
+        code: `function greet(name) {
+  return "Hello, " + name + "!";
+}`
+      },
     ];
 
     const postsContainer = document.getElementById("posts");
 
-    posts.forEach((post, index) => {
-      const postElement = `
-        <div class="post">
-          <h2>${post.title}</h2>
-          <pre>${post.code}</pre>
-          <button onclick="copyCode(${index})">Copy Code</button>
-        </div>
-      `;
-      postsContainer.innerHTML += postElement;
-    });
+    function renderPosts(filteredPosts) {
+      postsContainer.innerHTML = "";
+      filteredPosts.forEach((post, index) => {
+        const postElement = `
+          <div class="post">
+            <h2>${post.title}</h2>
+            <pre>${post.code}</pre>
+            <button onclick="copyCode(${index})">Copy Code</button>
+          </div>
+        `;
+        postsContainer.innerHTML += postElement;
+      });
+    }
+
+    function filterPosts() {
+      const searchValue = document.getElementById("search").value.toLowerCase();
+      const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchValue)
+      );
+      renderPosts(filteredPosts);
+    }
 
     function copyCode(index) {
       navigator.clipboard.writeText(posts[index].code).then(() => {
         alert("Code copied!");
       });
     }
+
+    // Initial rendering of posts
+    renderPosts(posts);
   </script>
 </body>
 </html>
