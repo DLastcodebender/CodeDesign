@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Sharing Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .post {
+      background: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .post h2 {
+      color: #007bff;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Code Sharing Blog</h1>
+  <div id="posts"></div>
+
+  <script>
+    const posts = [
+      {
+        title: "HTML Basics",
+        code: `<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>`
+      },
+      {
+        title: "CSS Styling Tricks",
+        code: `body {
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
+}`
+      },
+      {
+        title: "JavaScript Copy Button",
+        code: `function copyCode() {
+  const code = document.getElementById("codeBlock").innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    alert("Code copied!");
+  });
+}`
+      },
+    ];
+
+    const postsContainer = document.getElementById("posts");
+
+    posts.forEach((post, index) => {
+      const postElement = `
+        <div class="post">
+          <h2>${post.title}</h2>
+          <pre>${post.code}</pre>
+          <button onclick="copyCode(${index})">Copy Code</button>
+        </div>
+      `;
+      postsContainer.innerHTML += postElement;
+    });
+
+    function copyCode(index) {
+      navigator.clipboard.writeText(posts[index].code).then(() => {
+        alert("Code copied!");
+      });
+    }
+  </script>
+</body>
+</html>
