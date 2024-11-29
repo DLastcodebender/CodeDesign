@@ -11,13 +11,14 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background: linear-gradient(135deg, #f06, #00d4ff);
       color: #333;
+      transition: all 0.3s ease;
     }
 
     /* Header Styles */
     header {
-      background: linear-gradient(90deg, #007bff, #00d4ff);
+      background: linear-gradient(90deg, #007bff, #00d4ff, #f06);
       color: white;
       text-align: center;
       padding: 20px 10px;
@@ -27,6 +28,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      transition: all 0.3s ease;
     }
 
     header h1 {
@@ -37,21 +39,23 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 1.2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease;
     }
 
     header img {
-      width: 40px;
+      width: 50px;
       height: auto;
+      border: 2px solid white;
+      border-radius: 50%;
       transition: transform 0.3s ease;
     }
 
-    /* Hover effect on title */
+    /* Hover effect */
     header:hover h1 {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
-    /* Hover effect on image */
     header:hover img {
       transform: rotate(360deg);
     }
@@ -69,44 +73,52 @@
       padding: 12px;
       font-size: 1rem;
       border: 2px solid #007bff;
-      border-radius: 5px;
-      transition: border-color 0.3s ease;
+      border-radius: 25px;
+      transition: box-shadow 0.3s ease;
     }
 
     .search-bar input:focus {
       outline: none;
-      border-color: #00d4ff;
+      box-shadow: 0 0 8px #00d4ff;
     }
 
     /* Post Section Styling */
     .post {
-      background: #fff;
+      background: white;
       margin: 20px auto;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       max-width: 800px;
+      transition: transform 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
     }
 
     .post h2 {
       font-size: 1.8rem;
       color: #007bff;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
 
     /* Code Box Styling */
     .code-box {
-      background: #f1f1f1;
+      background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
       margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
+      padding: 15px;
+      border-radius: 10px;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95rem;
+      font-size: 1rem;
       overflow-x: auto;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .code-title {
       font-weight: bold;
-      color: #0056b3;
+      color: #007bff;
       margin-bottom: 5px;
     }
 
@@ -115,50 +127,36 @@
       display: inline-block;
       margin: 10px 0;
       padding: 10px 20px;
-      background-color: #007bff;
+      background: linear-gradient(90deg, #007bff, #00d4ff);
       color: white;
       font-size: 1rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
-      background-color: #0056b3;
+      background: linear-gradient(90deg, #0056b3, #007bff);
+      transform: scale(1.05);
     }
 
     /* Footer Styles */
     footer {
-      background-color: #333;
+      background: linear-gradient(90deg, #333, #444);
       color: white;
-      padding: 20px 10px;
+      padding: 20px;
       text-align: center;
       font-size: 0.9rem;
     }
 
-    footer .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer .footer-links {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    footer .footer-links li {
-      display: inline;
-      margin: 0 10px;
-    }
-
-    footer .footer-links li a {
+    footer a {
       color: #00d4ff;
       text-decoration: none;
     }
 
-    footer .footer-links li a:hover {
+    footer a:hover {
       text-decoration: underline;
     }
 
@@ -172,15 +170,16 @@
 
     .pagination-buttons button {
       padding: 10px 20px;
-      background-color: #007bff;
+      background: linear-gradient(90deg, #007bff, #00d4ff);
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .pagination-buttons button:hover {
-      background-color: #0056b3;
+      background: linear-gradient(90deg, #0056b3, #007bff);
     }
   </style>
 </head>
@@ -199,146 +198,9 @@
   <!-- Posts Section -->
   <div id="posts"></div>
 
-  <script>
-    const postsPerPage = 5; // Set the number of posts per page
-    let currentPage = 1;   // Keep track of the current page number
-
-    const posts = [
-      {
-        title: "Responsive Web Page",
-        html: `<!DOCTYPE html>
-<html>
-  <body>
-    <h1>Welcome to My Website</h1>
-  </body>
-</html>`,
-        css: `body {
-  font-family: Arial, sans-serif;
-  background-color: lightblue;
-}`,
-        js: `console.log("Welcome to my website!");`
-      },
-      {
-        title: "Interactive Button",
-        html: `<button id="myButton">Click Me!</button>`,
-        css: `button {
-  padding: 10px 20px;
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}`,
-        js: `document.getElementById("myButton").addEventListener("click", () => {
-  alert("Button clicked!");
-});`
-      },
-      // Add more posts as needed
-    ];
-
-    const postsContainer = document.getElementById("posts");
-
-    function renderPosts(filteredPosts = posts) {
-      const startIndex = (currentPage - 1) * postsPerPage;
-      const endIndex = currentPage * postsPerPage;
-      const postsToDisplay = filteredPosts.slice(startIndex, endIndex);
-
-      postsContainer.innerHTML = "";
-      postsToDisplay.forEach((post, index) => {
-        const postElement = `
-          <div class="post">
-            <h2>${post.title}</h2>
-            <div class="code-box">
-              <div class="code-title">HTML</div>
-              <pre>${post.html}</pre>
-              <button onclick="copyCode(${index}, 'html')">Copy HTML</button>
-            </div>
-            <div class="code-box">
-              <div class="code-title">CSS</div>
-              <pre>${post.css}</pre>
-              <button onclick="copyCode(${index}, 'css')">Copy CSS</button>
-            </div>
-            <div class="code-box">
-              <div class="code-title">JavaScript</div>
-              <pre>${post.js}</pre>
-              <button onclick="copyCode(${index}, 'js')">Copy JavaScript</button>
-            </div>
-          </div>
-        `;
-        postsContainer.innerHTML += postElement;
-      });
-
-      // Add pagination buttons
-      const pagination = `
-        <div class="pagination-buttons">
-          <button class="prev-post" onclick="changePage('prev')">Previous</button>
-          <button class="next-post" onclick="changePage('next')">Next</button>
-        </div>
-      `;
-      postsContainer.innerHTML += pagination;
-    }
-
-    function changePage(direction) {
-      if (direction === "next" && currentPage * postsPerPage < posts.length) {
-        currentPage++; // Move to the next page
-      } else if (direction === "prev" && currentPage > 1) {
-        currentPage--; // Move to the previous page
-      }
-      renderPosts(); // Re-render the posts with updated page number
-    }
-
-    function copyCode(index, type) {
-      const post = posts[index];
-      let codeToCopy = '';
-      if (type === 'html') {
-        codeToCopy = post.html;
-      } else if (type === 'css') {
-        codeToCopy = post.css;
-      } else if (type === 'js') {
-        codeToCopy = post.js;
-      }
-
-      const textArea = document.createElement('textarea');
-      textArea.value = codeToCopy;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      alert('Code copied to clipboard!');
-    }
-
-    function filterPosts() {
-      const searchQuery = document.getElementById("search").value.toLowerCase();
-      const filteredPosts = posts.filter(post =>
-        post.title.toLowerCase().includes(searchQuery)
-      );
-      currentPage = 1; // Reset to first page when filtering
-      renderPosts(filteredPosts);
-    }
-
-    // Initial render
-    renderPosts();
-  </script>
-
   <!-- Footer Section -->
   <footer>
-    <script type="text/javascript">
-	atOptions = {
-		'key' : '4f5a43cb304e8f275e4c7f108c330846',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/4f5a43cb304e8f275e4c7f108c330846/invoke.js"></script>
-    <div class="footer-content">
-      <p>&copy; 2024 DLastCodeBender. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy</a></li>
-      </ul>
-    </div>
+    <p>&copy; 2024 DLastCodeBender. All rights reserved.</p>
   </footer>
 </body>
 </html>
