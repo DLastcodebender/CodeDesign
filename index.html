@@ -4,179 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DLastCodeBender</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4548908538788244" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
-      color: #333;
     }
 
-    /* Header Styles */
     header {
-      background: linear-gradient(90deg, #007bff, #00d4ff);
+      background-color: #007bff;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 20px 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px 10px 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: bold;
-      font-family: 'Courier New', Courier, monospace;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      line-height: 1.2;
-      transition: transform 0.3s ease;
-    }
-
-    header img {
-      width: 40px;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-
-    header:hover h1 {
-      transform: scale(1.05);
-    }
-
-    header:hover img {
-      transform: rotate(360deg);
-    }
-
-    /* Search Bar Styling */
     .search-bar {
-      margin: 20px auto;
-      max-width: 800px;
+      margin: 20px;
       text-align: center;
     }
 
     .search-bar input {
-      width: 90%;
-      max-width: 600px;
-      padding: 12px;
-      font-size: 1rem;
-      border: 2px solid #007bff;
-      border-radius: 5px;
-      transition: border-color 0.3s ease;
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
     }
 
-    .search-bar input:focus {
-      outline: none;
-      border-color: #00d4ff;
-    }
-
-    /* Post Section Styling */
     .post {
-      background: #fff;
+      background: white;
       margin: 20px auto;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 800px;
-    }
-
-    .post h2 {
-      font-size: 1.8rem;
-      color: #007bff;
-    }
-
-    /* Code Box Styling */
-    .code-box {
-      background: #f1f1f1;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95rem;
-      overflow-x: auto;
-    }
-
-    .code-title {
-      font-weight: bold;
-      color: #0056b3;
-      margin-bottom: 5px;
-    }
-
-    /* Button Styling */
-    button {
-      display: inline-block;
-      margin: 10px 0;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Footer Styles */
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px 10px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer .footer-links {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    footer .footer-links li {
-      display: inline;
-      margin: 0 10px;
-    }
-
-    footer .footer-links li a {
-      color: #00d4ff;
-      text-decoration: none;
-    }
-
-    footer .footer-links li a:hover {
-      text-decoration: underline;
     }
 
     .pagination-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
+      margin: 20px;
     }
 
     .pagination-buttons button {
+      margin: 0 5px;
       padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
       border: none;
       border-radius: 5px;
+      background-color: #007bff;
+      color: white;
       cursor: pointer;
-    }
-
-    .pagination-buttons button:hover {
-      background-color: #0056b3;
     }
 
     .pagination-buttons button:disabled {
@@ -187,55 +63,109 @@
 </head>
 <body>
   <header>
-    <img src="/web-page-icon.svg" alt="Icon">
     <h1>DLastCodeBender</h1>
   </header>
 
   <div class="search-bar">
-    <input type="text" id="search" placeholder="Search for posts..." oninput="filterPosts()" />
+    <input type="text" id="search" placeholder="Search for posts..." oninput="filterPosts()">
   </div>
 
   <div id="posts"></div>
 
-  <script>
-    const postsPerPage = 5;
-    let currentPage = 1;
+  <div class="pagination-buttons">
+    <button id="prevPage" onclick="changePage(-1)">Previous</button>
+    <button id="nextPage" onclick="changePage(1)">Next</button>
+  </div>
 
+  <script>
+    // Posts Data
     const posts = [
       {
         title: "Responsive Web Page",
-        html: `<h1>Welcome!</h1>`,
-        css: `body { background: blue; }`,
-        js: `console.log("Hello!");`
+        html: "<h1>Hello World</h1>",
+        css: "body { background-color: lightblue; }",
+        js: "console.log('Hello World!');"
       },
       {
         title: "Interactive Button",
-        html: `<button>Click</button>`,
-        css: `button { color: red; }`,
-        js: `alert('Hi!');`
+        html: "<button>Click Me</button>",
+        css: "button { color: red; }",
+        js: "document.querySelector('button').onclick = () => alert('Clicked!');"
+      },
+      {
+        title: "Dynamic List",
+        html: "<ul><li>Item 1</li><li>Item 2</li></ul>",
+        css: "ul { list-style: none; }",
+        js: "console.log('List loaded');"
+      },
+      {
+        title: "Simple Form",
+        html: "<form><input type='text'></form>",
+        css: "input { border: 1px solid #ccc; }",
+        js: "console.log('Form ready');"
+      },
+      {
+        title: "CSS Grid",
+        html: "<div class='grid'></div>",
+        css: ".grid { display: grid; grid-template-columns: 1fr 1fr; }",
+        js: "console.log('Grid loaded');"
       },
     ];
 
+    const postsPerPage = 2;
+    let currentPage = 1;
+    let filteredPosts = [...posts]; // Copy of posts for filtering
+
     const postsContainer = document.getElementById("posts");
+    const prevPageButton = document.getElementById("prevPage");
+    const nextPageButton = document.getElementById("nextPage");
 
-    function renderPosts(filteredPosts = posts) {
+    // Render posts based on current page and filtered data
+    function renderPosts() {
       const startIndex = (currentPage - 1) * postsPerPage;
-      const endIndex = currentPage * postsPerPage;
+      const endIndex = startIndex + postsPerPage;
 
-      postsContainer.innerHTML = filteredPosts.slice(startIndex, endIndex)
-        .map((post, index) => `
+      // Slice the filtered posts for the current page
+      const currentPosts = filteredPosts.slice(startIndex, endIndex);
+
+      // Render posts
+      postsContainer.innerHTML = currentPosts
+        .map(post => `
           <div class="post">
             <h2>${post.title}</h2>
-            <div class="code-box"><div class="code-title">HTML</div><pre>${post.html}</pre></div>
+            <div><strong>HTML:</strong> <pre>${post.html}</pre></div>
+            <div><strong>CSS:</strong> <pre>${post.css}</pre></div>
+            <div><strong>JavaScript:</strong> <pre>${post.js}</pre></div>
           </div>
         `).join("");
+
+      // Update button states
+      prevPageButton.disabled = currentPage === 1;
+      nextPageButton.disabled = endIndex >= filteredPosts.length;
     }
 
+    // Change page
+    function changePage(direction) {
+      currentPage += direction;
+      renderPosts();
+    }
+
+    // Filter posts based on search input
+    function filterPosts() {
+      const searchQuery = document.getElementById("search").value.toLowerCase();
+
+      // Filter posts by title
+      filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchQuery)
+      );
+
+      // Reset to the first page after filtering
+      currentPage = 1;
+      renderPosts();
+    }
+
+    // Initial render
     renderPosts();
   </script>
-
-  <footer>
-    &copy; 2024
-  </footer>
 </body>
 </html>
