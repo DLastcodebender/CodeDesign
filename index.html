@@ -11,13 +11,13 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(120deg, #f4f4f9, #ffffff);
+      background-color: #f4f4f9;
       color: #333;
     }
 
     /* Header Styles */
     header {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      background: linear-gradient(90deg, #007bff, #00d4ff);
       color: white;
       text-align: center;
       padding: 20px 10px;
@@ -37,11 +37,11 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 1.2;
-      transition: transform 0.3s ease, color 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     header img {
-      width: 50px;
+      width: 40px;
       height: auto;
       transition: transform 0.3s ease;
     }
@@ -49,7 +49,6 @@
     /* Hover effect on title */
     header:hover h1 {
       transform: scale(1.05);
-      color: #ffdd40;
     }
 
     /* Hover effect on image */
@@ -69,56 +68,45 @@
       max-width: 600px;
       padding: 12px;
       font-size: 1rem;
-      border: 2px solid #2575fc;
-      border-radius: 30px;
-      transition: border-color 0.3s ease, background-color 0.3s ease;
-      background-color: #f1f1f1;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
     }
 
     .search-bar input:focus {
       outline: none;
-      border-color: #ff5733;
-      background-color: #fff;
+      border-color: #00d4ff;
     }
 
     /* Post Section Styling */
     .post {
-      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      background: #fff;
       margin: 20px auto;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       max-width: 800px;
-      color: white;
-      animation: fadeIn 0.5s ease-in-out;
     }
 
     .post h2 {
       font-size: 1.8rem;
-      color: #ffdd40;
-      margin-bottom: 10px;
+      color: #007bff;
     }
 
     /* Code Box Styling */
     .code-box {
-      background: #000;
+      background: #f1f1f1;
       margin: 10px 0;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 10px;
+      border-radius: 5px;
       font-family: 'Courier New', Courier, monospace;
       font-size: 0.95rem;
-      color: #0affff;
       overflow-x: auto;
-    }
-
-    .code-box:hover {
-      box-shadow: 0 0 10px 5px #ff6f61;
-      background: #222;
     }
 
     .code-title {
       font-weight: bold;
-      color: #ffdd40;
+      color: #0056b3;
       margin-bottom: 5px;
     }
 
@@ -127,23 +115,22 @@
       display: inline-block;
       margin: 10px 0;
       padding: 10px 20px;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      background-color: #007bff;
       color: white;
       font-size: 1rem;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background: linear-gradient(45deg, #ff5733, #ff758c);
-      transform: scale(1.1);
+      background-color: #0056b3;
     }
 
     /* Footer Styles */
     footer {
-      background: #333;
+      background-color: #333;
       color: white;
       padding: 20px 10px;
       text-align: center;
@@ -185,29 +172,15 @@
 
     .pagination-buttons button {
       padding: 10px 20px;
-      background: linear-gradient(90deg, #ff7eb3, #ff758c);
+      background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 30px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .pagination-buttons button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px 3px #ff758c;
-    }
-
-    /* Fade-In Animation */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -227,8 +200,123 @@
   <div id="posts"></div>
 
   <script>
-    // Same JS logic as before for rendering posts, search, and pagination
-    /* Use your existing JavaScript code to populate and render posts dynamically */
+    const postsPerPage = 5; // Set the number of posts per page
+    let currentPage = 1;   // Keep track of the current page number
+
+    const posts = [
+      {
+        title: "Responsive Web Page",
+        html: `<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Welcome to My Website</h1>
+  </body>
+</html>`,
+        css: `body {
+  font-family: Arial, sans-serif;
+  background-color: lightblue;
+}`,
+        js: `console.log("Welcome to my website!");`
+      },
+      {
+        title: "Interactive Button",
+        html: `<button id="myButton">Click Me!</button>`,
+        css: `button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}`,
+        js: `document.getElementById("myButton").addEventListener("click", () => {
+  alert("Button clicked!");
+});`
+      },
+      // Add more posts as needed
+    ];
+
+    const postsContainer = document.getElementById("posts");
+
+    function renderPosts(filteredPosts = posts) {
+      const startIndex = (currentPage - 1) * postsPerPage;
+      const endIndex = currentPage * postsPerPage;
+      const postsToDisplay = filteredPosts.slice(startIndex, endIndex);
+
+      postsContainer.innerHTML = "";
+      postsToDisplay.forEach((post, index) => {
+        const postElement = `
+          <div class="post">
+            <h2>${post.title}</h2>
+            <div class="code-box">
+              <div class="code-title">HTML</div>
+              <pre>${post.html}</pre>
+              <button onclick="copyCode(${index}, 'html')">Copy HTML</button>
+            </div>
+            <div class="code-box">
+              <div class="code-title">CSS</div>
+              <pre>${post.css}</pre>
+              <button onclick="copyCode(${index}, 'css')">Copy CSS</button>
+            </div>
+            <div class="code-box">
+              <div class="code-title">JavaScript</div>
+              <pre>${post.js}</pre>
+              <button onclick="copyCode(${index}, 'js')">Copy JavaScript</button>
+            </div>
+          </div>
+        `;
+        postsContainer.innerHTML += postElement;
+      });
+
+      // Add pagination buttons
+      const pagination = `
+        <div class="pagination-buttons">
+          <button class="prev-post" onclick="changePage('prev')">Previous</button>
+          <button class="next-post" onclick="changePage('next')">Next</button>
+        </div>
+      `;
+      postsContainer.innerHTML += pagination;
+    }
+
+    function changePage(direction) {
+      if (direction === "next" && currentPage * postsPerPage < posts.length) {
+        currentPage++; // Move to the next page
+      } else if (direction === "prev" && currentPage > 1) {
+        currentPage--; // Move to the previous page
+      }
+      renderPosts(); // Re-render the posts with updated page number
+    }
+
+    function copyCode(index, type) {
+      const post = posts[index];
+      let codeToCopy = '';
+      if (type === 'html') {
+        codeToCopy = post.html;
+      } else if (type === 'css') {
+        codeToCopy = post.css;
+      } else if (type === 'js') {
+        codeToCopy = post.js;
+      }
+
+      const textArea = document.createElement('textarea');
+      textArea.value = codeToCopy;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Code copied to clipboard!');
+    }
+
+    function filterPosts() {
+      const searchQuery = document.getElementById("search").value.toLowerCase();
+      const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchQuery)
+      );
+      currentPage = 1; // Reset to first page when filtering
+      renderPosts(filteredPosts);
+    }
+
+    // Initial render
+    renderPosts();
   </script>
 
   <!-- Footer Section -->
