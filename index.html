@@ -128,6 +128,60 @@
       background-color: #0056b3;
     }
 
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer .footer-links {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    footer .footer-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    footer .footer-links li a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    footer .footer-links li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pagination Button Styling */
+    .pagination-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .pagination-buttons button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pagination-buttons button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -146,6 +200,9 @@
   <div id="posts"></div>
 
   <script>
+    const postsPerPage = 5; // Set the number of posts per page
+    let currentPage = 1;   // Keep track of the current page number
+
     const posts = [
       {
         title: "Responsive Web Page",
@@ -174,14 +231,19 @@
         js: `document.getElementById("myButton").addEventListener("click", () => {
   alert("Button clicked!");
 });`
-      }
+      },
+      // Add more posts as needed
     ];
 
     const postsContainer = document.getElementById("posts");
 
-    function renderPosts(filteredPosts) {
+    function renderPosts(filteredPosts = posts) {
+      const startIndex = (currentPage - 1) * postsPerPage;
+      const endIndex = currentPage * postsPerPage;
+      const postsToDisplay = filteredPosts.slice(startIndex, endIndex);
+
       postsContainer.innerHTML = "";
-      filteredPosts.forEach((post, index) => {
+      postsToDisplay.forEach((post, index) => {
         const postElement = `
           <div class="post">
             <h2>${post.title}</h2>
@@ -204,14 +266,24 @@
         `;
         postsContainer.innerHTML += postElement;
       });
+
+      // Add pagination buttons
+      const pagination = `
+        <div class="pagination-buttons">
+          <button class="prev-post" onclick="changePage('prev')">Previous</button>
+          <button class="next-post" onclick="changePage('next')">Next</button>
+        </div>
+      `;
+      postsContainer.innerHTML += pagination;
     }
 
-    function filterPosts() {
-      const searchValue = document.getElementById("search").value.toLowerCase();
-      const filteredPosts = posts.filter(post =>
-        post.title.toLowerCase().includes(searchValue)
-      );
-      renderPosts(filteredPosts);
+    function changePage(direction) {
+      if (direction === "next" && currentPage * postsPerPage < posts.length) {
+        currentPage++; // Move to the next page
+      } else if (direction === "prev" && currentPage > 1) {
+        currentPage--; // Move to the previous page
+      }
+      renderPosts(); // Re-render the posts with updated page number
     }
 
     function copyCode(index, type) {
@@ -224,13 +296,39 @@
       } else if (type === 'js') {
         codeToCopy = post.js;
       }
-      navigator.clipboard.writeText(codeToCopy).then(() => {
-        alert(`${type.toUpperCase()} code copied!`);
-      });
+
+      const textArea = document.createElement('textarea');
+      textArea.value = codeToCopy;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Code copied to clipboard!');
     }
 
-    // Initial rendering of posts
-    renderPosts(posts);
+    function filterPosts() {
+      const searchQuery = document.getElementById("search").value.toLowerCase();
+      const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchQuery)
+      );
+      currentPage = 1; // Reset to first page when filtering
+      renderPosts(filteredPosts);
+    }
+
+    // Initial render
+    renderPosts();
   </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 DLastCodeBender. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
