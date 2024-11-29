@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DLastCodeBender</title>
+  <meta name="description" content="DLastCodeBender - A coding and web development blog. Learn, code, and grow.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4548908538788244"
      crossorigin="anonymous"></script>
   <style>
@@ -197,8 +198,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="/web-page-icon.svg" alt="icon of a webpage with code">
+  <header role="banner">
+    <img src="assets/images/web-page-icon.svg" alt="Website icon">
     <h1>DLastCodeBender</h1>
   </header>
 
@@ -212,15 +213,44 @@
     <div class="footer-content">
       <p>&copy; 2024 DLastCodeBender. All rights reserved.</p>
       <ul class="footer-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </div>
   </footer>
 
   <script>
-    // Your JavaScript remains unchanged
+    // Populate posts dynamically
+    document.addEventListener('DOMContentLoaded', () => {
+      const postsContainer = document.getElementById('posts');
+      const postsData = [
+        { title: "How to Code a Webpage", content: "Learn the basics of HTML, CSS, and JavaScript to build your first webpage!" },
+        { title: "JavaScript Tips", content: "Discover 10 JavaScript tips that will help you become a better developer." },
+        { title: "Mastering CSS", content: "A guide to mastering CSS and creating stunning web designs." },
+      ];
+
+      postsData.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('post');
+        postElement.innerHTML = `
+          <h2>${post.title}</h2>
+          <p>${post.content}</p>
+        `;
+        postsContainer.appendChild(postElement);
+      });
+    });
+
+    // Filter posts based on search query
+    function filterPosts() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const posts = document.querySelectorAll('.post');
+      
+      posts.forEach(post => {
+        const title = post.querySelector('h2').innerText.toLowerCase();
+        post.style.display = title.includes(query) ? '' : 'none';
+      });
+    }
   </script>
 </body>
 </html>
