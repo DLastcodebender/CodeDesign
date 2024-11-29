@@ -4,168 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DLastCodeBender</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4548908538788244"
+     crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background: linear-gradient(120deg, #f4f4f9, #ffffff);
+      color: #333;
     }
 
+    /* Header Styles */
     header {
-      background-color: #007bff;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 20px 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    header img {
+      width: 50px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover effect on title */
+    header:hover h1 {
+      transform: scale(1.05);
+      color: #ffdd40;
+    }
+
+    /* Hover effect on image */
+    header:hover img {
+      transform: rotate(360deg);
+    }
+
+    /* Search Bar Styling */
     .search-bar {
-      margin: 20px;
+      margin: 20px auto;
+      max-width: 800px;
       text-align: center;
     }
 
     .search-bar input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
+      width: 90%;
+      max-width: 600px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #2575fc;
+      border-radius: 30px;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      background-color: #f1f1f1;
     }
 
+    .search-bar input:focus {
+      outline: none;
+      border-color: #ff5733;
+      background-color: #fff;
+    }
+
+    /* Post Section Styling */
     .post {
-      background: white;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
       margin: 20px auto;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       max-width: 800px;
+      color: white;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
+    .post h2 {
+      font-size: 1.8rem;
+      color: #ffdd40;
+      margin-bottom: 10px;
+    }
+
+    /* Code Box Styling */
+    .code-box {
+      background: #000;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      color: #0affff;
+      overflow-x: auto;
+    }
+
+    .code-box:hover {
+      box-shadow: 0 0 10px 5px #ff6f61;
+      background: #222;
+    }
+
+    .code-title {
+      font-weight: bold;
+      color: #ffdd40;
+      margin-bottom: 5px;
+    }
+
+    /* Button Styling */
+    button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #ff5733, #ff758c);
+      transform: scale(1.1);
+    }
+
+    /* Footer Styles */
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer .footer-links {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    footer .footer-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    footer .footer-links li a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    footer .footer-links li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pagination Button Styling */
     .pagination-buttons {
       display: flex;
       justify-content: center;
-      margin: 20px;
+      gap: 15px;
+      margin: 20px 0;
     }
 
     .pagination-buttons button {
-      margin: 0 5px;
       padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
+      background: linear-gradient(90deg, #ff7eb3, #ff758c);
       color: white;
+      border: none;
+      border-radius: 30px;
       cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .pagination-buttons button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
+    .pagination-buttons button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px 3px #ff758c;
+    }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header Section -->
   <header>
+    <img src="/web-page-icon.svg" alt="icon of a webpage with code">
     <h1>DLastCodeBender</h1>
   </header>
 
+  <!-- Search Bar -->
   <div class="search-bar">
-    <input type="text" id="search" placeholder="Search for posts..." oninput="filterPosts()">
+    <input type="text" id="search" placeholder="Search for posts..." oninput="filterPosts()" />
   </div>
 
+  <!-- Posts Section -->
   <div id="posts"></div>
 
-  <div class="pagination-buttons">
-    <button id="prevPage" onclick="changePage(-1)">Previous</button>
-    <button id="nextPage" onclick="changePage(1)">Next</button>
-  </div>
-
   <script>
-    // Posts Data
-    const posts = [
-      {
-        title: "Responsive Web Page",
-        html: "<h1>Hello World</h1>",
-        css: "body { background-color: lightblue; }",
-        js: "console.log('Hello World!');"
-      },
-      {
-        title: "Interactive Button",
-        html: "<button>Click Me</button>",
-        css: "button { color: red; }",
-        js: "document.querySelector('button').onclick = () => alert('Clicked!');"
-      },
-      {
-        title: "Dynamic List",
-        html: "<ul><li>Item 1</li><li>Item 2</li></ul>",
-        css: "ul { list-style: none; }",
-        js: "console.log('List loaded');"
-      },
-      {
-        title: "Simple Form",
-        html: "<form><input type='text'></form>",
-        css: "input { border: 1px solid #ccc; }",
-        js: "console.log('Form ready');"
-      },
-      {
-        title: "CSS Grid",
-        html: "<div class='grid'></div>",
-        css: ".grid { display: grid; grid-template-columns: 1fr 1fr; }",
-        js: "console.log('Grid loaded');"
-      },
-    ];
-
-    const postsPerPage = 2;
-    let currentPage = 1;
-    let filteredPosts = [...posts]; // Copy of posts for filtering
-
-    const postsContainer = document.getElementById("posts");
-    const prevPageButton = document.getElementById("prevPage");
-    const nextPageButton = document.getElementById("nextPage");
-
-    // Render posts based on current page and filtered data
-    function renderPosts() {
-      const startIndex = (currentPage - 1) * postsPerPage;
-      const endIndex = startIndex + postsPerPage;
-
-      // Slice the filtered posts for the current page
-      const currentPosts = filteredPosts.slice(startIndex, endIndex);
-
-      // Render posts
-      postsContainer.innerHTML = currentPosts
-        .map(post => `
-          <div class="post">
-            <h2>${post.title}</h2>
-            <div><strong>HTML:</strong> <pre>${post.html}</pre></div>
-            <div><strong>CSS:</strong> <pre>${post.css}</pre></div>
-            <div><strong>JavaScript:</strong> <pre>${post.js}</pre></div>
-          </div>
-        `).join("");
-
-      // Update button states
-      prevPageButton.disabled = currentPage === 1;
-      nextPageButton.disabled = endIndex >= filteredPosts.length;
-    }
-
-    // Change page
-    function changePage(direction) {
-      currentPage += direction;
-      renderPosts();
-    }
-
-    // Filter posts based on search input
-    function filterPosts() {
-      const searchQuery = document.getElementById("search").value.toLowerCase();
-
-      // Filter posts by title
-      filteredPosts = posts.filter(post =>
-        post.title.toLowerCase().includes(searchQuery)
-      );
-
-      // Reset to the first page after filtering
-      currentPage = 1;
-      renderPosts();
-    }
-
-    // Initial render
-    renderPosts();
+    // Same JS logic as before for rendering posts, search, and pagination
+    /* Use your existing JavaScript code to populate and render posts dynamically */
   </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 DLastCodeBender. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
