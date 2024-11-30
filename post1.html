@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Title - DLastCodeBender</title>
+  <link rel="stylesheet" href="post-style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <!-- Header -->
+  <header class="post-header">
+    <img src="web-page-icon.svg" alt="Web Page Icon" class="header-icon">
+    <span>DLastCodeBender</span>
+  </header>
+
+  <!-- Post Content -->
+  <div class="post-container">
+    <!-- Post Title -->
+    <h1 class="post-title">Matrix Rain Effect</h1>
+    
+    <!-- Post Media (Image or Video) -->
+    <div class="post-media">
+      <video src="XiaoYing_Video_1732915375439_HD.mp4" autoplay loop muted class="post-video"></video>
+    </div>
+
+    <!-- Post Body -->
+    <div class="post-body">
+      <h2>What is the Matrix Rain Effect?</h2>
+      <p>The Matrix Rain Effect is a captivating visual animation inspired by the movie The Matrix (1999). In the film, it represents computer code—a series of glowing green letters, numbers, and symbols cascading down a black screen like digital rain. This effect has since become a cultural icon in the tech world, symbolizing coding, digital reality, and the virtual world.
+        
+        Origin of the Matrix Rain Effect
+        The animation was created by Simon Whiteley, a production designer for The Matrix. To make it visually unique, he blended Japanese katakana characters with English numbers and symbols. This gave the rain a mysterious and futuristic look, perfectly matching the movie's theme of a simulated reality controlled by machines. It’s one of the most recognizable symbols in pop culture, representing technology and the concept of digital worlds.
+        
+        <h2>Why is it Popular?</h2>
+        The Matrix Rain Effect is mesmerizing because of its simplicity and striking design. It’s more than just a movie prop; it has become a way to represent computers and coding in general. The effect has been used in video games, websites, and digital art. It’s a visual shorthand for the digital age, connecting people to the idea of programming and virtual reality. Even after more than 20 years, it still feels futuristic and relevant.
+        
+        How is it Made?
+        Creating the Matrix Rain Effect isn’t as hard as it looks. With coding tools like HTML, CSS, and JavaScript, you can easily recreate the falling green letters. The effect relies on a few key techniques:
+        
+        CSS handles the styling of the text, giving it the glowing green color.
+        JavaScript is used to make the text move, creating the animation of letters falling in random patterns.
+        It’s a great project for beginners learning to code, as it’s simple to build but looks impressive.
+        
+        <p><h2>Why Should You Try It?</h2></p>
+        Making the Matrix Rain Effect is a fun and creative way to learn programming. It allows you to practice animation techniques and understand how HTML, CSS, and JavaScript work together. Plus, the final result is a stunning animation that can be used in websites, presentations, or just for fun.
+        
+        Even though it was created decades ago, the Matrix Rain Effect remains a timeless symbol of the digital world and continues to inspire coders and creators worldwide.</p>
+      <p>Here we dive deep into its features, how it interacts with HTML, and how to use it effectively in your projects.</p>
+    </div>
+
+    <!-- Code Boxes for HTML, CSS, and JS -->
+    <div class="code-box">
+      <h3>HTML Code</h3>
+      <pre><code class="html-code">
+        &lt;div class="matrix"&gt;
+          &lt;h1&gt;Matrix Rain Effect&lt;/h1&gt;
+          &lt;video src="matrix-rain.mp4" autoplay loop&gt;&lt;/video&gt;
+        &lt;/div&gt;
+      </code></pre>
+      <button class="copy-btn" onclick="copyCode('html-code')">Copy HTML Code</button>
+    </div>
+
+    <div class="code-box">
+      <h3>CSS Code</h3>
+      <pre><code class="css-code">
+        .matrix {
+          position: relative;
+          background-color: #000;
+          color: green;
+        }
+        video {
+          width: 100%;
+        }
+      </code></pre>
+      <button class="copy-btn" onclick="copyCode('css-code')">Copy CSS Code</button>
+    </div>
+
+    <div class="code-box">
+      <h3>JavaScript Code</h3>
+      <pre><code class="js-code">
+        const matrixEffect = () => {
+          console.log('Matrix Rain Effect');
+        };
+        matrixEffect();
+      </code></pre>
+      <button class="copy-btn" onclick="copyCode('js-code')">Copy JS Code</button>
+    </div>
+
+    <!-- Alert Box after Copying -->
+    <div id="alert-box" style="display:none; position: fixed; top: 20px; right: 20px; background-color: #4CAF50; color: white; padding: 10px; border-radius: 5px; font-size: 1.2rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      Code copied to clipboard!
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="post-footer">
+      <a href="index.html" class="nav-link">Back to Homepage</a>
+      <a href="post2.html" class="nav-link">Next Post</a>
+    </div>
+  </div>
+
+  <script src="post1.js"></script> <!-- Link to your JavaScript file -->
+</body>
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h2>DLastCodeBender</h2>
+        <p>Where code meets creativity and innovation!</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 DLastCodeBender | All Rights Reserved</p>
+    </div>
+  </footer>
+</html>
