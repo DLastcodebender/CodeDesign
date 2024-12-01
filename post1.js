@@ -1,22 +1,17 @@
-function copyCode(codeType) {
-    let codeElement = document.querySelector(`.${codeType}`);
-    let text = codeElement.innerText || codeElement.textContent;
-  
-    // Create a temporary input field to copy the code
-    let tempInput = document.createElement('input');
-    document.body.appendChild(tempInput);
-    tempInput.value = text;
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-  
-    // Show the alert
-    const alertBox = document.getElementById('alert-box');
-    alertBox.style.display = 'block';
-    
-    // Hide the alert after 2 seconds
-    setTimeout(() => {
-      alertBox.style.display = 'none';
-    }, 2000);
-  }
-  
+function copyCode(button) {
+  const codeText = button.closest('.code-box').querySelector('code').innerText;
+  const textarea = document.createElement('textarea');
+  document.body.appendChild(textarea);
+  textarea.value = codeText;
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  // Change the button text to 'Copied✔️' after clicking
+  button.innerText = 'Copied✔️';
+
+  // Optional: Reset button text back to 'Copy' after 2 seconds
+  setTimeout(() => {
+    button.innerText = 'Copy';
+  }, 2000);
+}

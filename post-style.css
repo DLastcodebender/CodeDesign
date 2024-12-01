@@ -1,267 +1,291 @@
-/* Reset and General Styles */
+/* Styling for Ad Box */
+.ad-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  max-width: 300px;
+  background: white; /* White background for each ad */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures content doesn’t spill out */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for ads */
+}
+
+.ad-box img {
+  width: 100%; /* Ad image spans full width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+.ad-box a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.ad-box p {
+  font-size: 14px; /* Smaller text size for descriptions */
+  color: #555; /* Gray text color for ad description */
+  margin: 0; /* Remove margin */
+}
+
+/* Sidebar Styling for AdSense */
+.sidebar {
+  position: fixed; /* Sidebar stays fixed on the sides */
+  top: 50%; /* Centers the sidebar vertically */
+  transform: translateY(-50%); /* Centers it perfectly */
+  width: 300px; /* Wider for ads */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Text color */
+  padding: 10px; /* Inner spacing */
+  box-shadow: none; /* Remove shadow */
+  z-index: 1000; /* Keeps it on top of other content */
+}
+
+.sidebar.left {
+  left: 0; /* Sidebar on the left */
+}
+
+.sidebar.right {
+  right: 0; /* Sidebar on the right */
+}
+
+/* Main content */
+.main-content {
+  margin-left: 200px; /* Adjusted space for the left sidebar */
+  margin-right: 200px; /* Adjusted space for the right sidebar */
+  padding: 20px;
+  max-width: 700px; /* Set a maximum width for the content */
+  margin-left: auto;
+  margin-right: auto; /* Center the content horizontally */
+}
+
+/* Article styling */
+article {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #333; /* Dark text for headings */
+}
+
+p {
+  margin-bottom: 10px; /* Spacing between paragraphs */
+}
+
+ul {
+  margin-left: 20px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 20px; /* Reduced margin on left for smaller screens */
+    margin-right: 20px; /* Reduced margin on right for smaller screens */
+  }
+
+  /* Make article content take up more width on mobile */
+  article {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading font size for smaller screens */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph font size for better readability */
+  }
+
+  ul {
+    font-size: 1rem; /* Adjust list font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even further adjustments for very small screens like phones in portrait mode */
+  .main-content {
+    margin-left: 10px; /* Even smaller margin for ultra-small screens */
+    margin-right: 10px;
+  }
+
+  article {
+    padding: 10px; /* Reduce padding on very small screens */
+  }
+}
+
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  /* Left Sidebar on Mobile */
+  .sidebar.left {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none; /* Reset transformations */
+    width: 100%; /* Sidebar takes full width */
+    margin-top: 20px; /* Add space above the sidebar */
+  }
+
+  /* Right Sidebar on Mobile */
+  .sidebar.right {
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: none; /* Reset transformations */
+    width: 100%; /* Sidebar takes full width */
+    margin-top: 20px; /* Add space above the sidebar */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove sidebar spacing */
+    margin-right: 0; /* Remove sidebar spacing */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Responsive Post Video */
+.post-video {
+  width: 100%;
+  height: auto;
+}
+
+/* Basic styling for the header */
+header {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align image and text */
+  color: black; /* Black text */
+  text-align: left; /* Align header content to the left */
+  padding: 20px; /* Space inside the header */
+  font-size: 1.5rem; /* Text size */
+  gap: 10px; /* Space between the image and the text */
+}
+
+header img {
+  width: 40px; /* Set the image width */
+  height: auto; /* Maintain aspect ratio */
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, rgb(217, 223, 227), hwb(200 89% 8%));
-  color: #333;
-}
-
-header.post-header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-icon {
-  width: 40px;
-  margin-right: 10px;
-}
-
-.post-header span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Post Container */
-.post-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Post Title */
-.post-title {
-  font-size: 2rem;
-  color: #b51329;
-  margin: 10px 0;
-  text-align: center;
-}
-
-.post-meta {
-  font-size: 1rem;
-  color: #7f8c8d;
-  text-align: center;
+  color: black;
 }
 
 /* Post Media */
-.post-media {
-  margin: 20px 0;
-  text-align: center;
+/* Video wrapper to create a square container */
+.video-wrapper {
+  width: 100%; /* Set the width to your desired square size */
+  height: 350px; /* Set the height to match the width */
+  overflow: hidden; /* Crop any overflowed content */
+  position: relative;
 }
 
-.post-video {
-  width: 400px;           /* Set a fixed width for the video */
-  height: 400px;          /* Match the height to the width for a square shape */
-  border-radius: 10px;    /* Optional: Add rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a soft shadow */
-  object-fit: cover;      /* Ensures the video fills the square without distortion */
-  display: block;         /* Centers the video as a block element */
-  margin: 0 auto;         /* Center the video horizontally within its container */
-}
-
-
-/* Post Body */
-.post-body {
-  margin: 20px 0;
-  line-height: 1.6;
-}
-
-.post-body h2 {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.post-body p {
-  font-size: 1.1rem;
-  color: #7f8c8d;
-  margin-bottom: 10px;
-}
-
-/* Footer Navigation Links */
-.post-footer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.nav-link {
-  font-size: 1.1rem;
-  color: #3498db;
-  text-decoration: none;
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #ecf0f1;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: #3498db;
-  color: #fff;
-}
-
-/* Styling for the code box */
-.code-box {
-  background-color: #f8f8f8;
-  padding: 15px;
-  margin-top: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* For positioning the copy button */
-}
-
-.code-box h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #2c3e50;
-}
-
-pre {
-  background-color: #2d2d2d;
-  color: #f8f8f8;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-button.copy-btn {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
+/* Video styling */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fills the square container while maintaining its aspect ratio */
   position: absolute;
-  top: 10px;
-  right: 10px; /* Position it at the top-right corner */
-  transition: background-color 0.3s ease;
+  top: 0;
+  left: 0;
 }
 
-button.copy-btn:hover {
-  background-color: #2980b9;
+body {
+  
+  font-family: monospace;
+  margin: 0;
+  padding: 20px;
 }
 
-/* Copy Alert Box */
-#alert-box {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #4CAF50;
-  color: white;
+.code-box {
+  background-color: #1e1e1e; /* Slightly lighter background for the code box */
+  border-radius: 8px;
+  margin-bottom: 20px;
   padding: 10px;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: monospace;
+  margin: 2;
+  padding: 20px;
 }
 
-/* Footer Styles */
-/* Footer Styles */
-.footer {
-  background: linear-gradient(to right, rgb(198, 201, 219), #eeeef2d5); /* Blue/white gradient */
-  color: black;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-content {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
+  font-size: 0.8rem;
+  color: #ccc;
 }
 
-.footer-left {
-  text-align: left;
-  margin-bottom: 20px;
+.code-type {
+  font-size: x-small;
 }
 
-.footer-left h2 {
-  font-size: 2rem;
-  margin: 0;
+.copy-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.footer-left p {
-  font-size: 1rem;
-  font-style: italic;
-  margin-top: 10px;
+.copy-btn:hover {
+  background-color: #555;
 }
 
-.footer-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+pre {
+  background-color: #111; /* Background for the code area */
+  padding: 15px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  overflow: auto; /* Ensure that long lines of code are scrollable */
 }
 
-.footer-links li {
-  margin-bottom: 10px;
+pre[class*="language-"], code {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 10px; /* Add some spacing inside the code block */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 200px; /* Limit the height of the code block */
+  white-space: pre-wrap; /* Allow the code to wrap within the block */
+  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+  font-size: x-small;
 }
 
-.footer-links a {
-  text-decoration: none;
-  color:  black;
-  font-size: 1.1rem;
+/* Navigation Bar Styling */
+/* Navigation Bar Styling */
+nav {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the navigation links */
+  align-items: center; /* Center items vertically */
+  background-color: #333; /* Dark background */
+  padding: 15px 20px; /* Add padding */
 }
 
-.footer-links a:hover {
-  color: #ff8c00; /* Hover color */
+/* Navigation links */
+.nav-links {
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Space between links */
 }
 
-.footer-socials {
-  display: flex;
-  gap: 20px;
+.nav-links a {
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  font-weight: normal;
 }
 
-.footer-socials .social-icon {
-  font-size: 1.5rem;
-  color: black;
-  text-decoration: none;
-}
-
-.footer-socials .social-icon:hover {
-  color: #ff8c00; /* Hover color */
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #cd1c40;
-}
-
-.footer-bottom p {
-  margin: 0;
-}
-
-/* Responsive design for small screens */
-@media screen and (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-left {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .footer-links ul {
-    display: flex;
-    gap: 20px;
-  }
+.nav-links a:hover {
+  color: #ffcc00; /* Highlight color on hover */
 }
