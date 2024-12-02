@@ -59,80 +59,91 @@ body, html {
 }
 
 
-.content {
+ /* Post container */
+ #posts-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 10px;
-  background-color: #f9f9f9;
-  margin-top: 20px;
+  flex-wrap: wrap; /* Allow posts to wrap on smaller screens */
+  justify-content: center; /* Center the posts horizontally */
+  align-items: flex-start; /* Align items at the top vertically */
+  gap: 20px; /* Space between posts */
+  padding: 100px 10px; /* Add some padding around the container */
+  margin: 0 auto; /* Center the container */
+  max-width: 80%; /* Limit the container width */
+  width: 100%; /* Ensure it takes up full width */
 }
 
-#posts-container {
-  display: block;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;;
-  width: 50%;
+/* Individual post */
+.post {
+  width: 350px; /* Set a fixed width for posts */
+  margin: 0 auto; /* Ensure posts are centered within the container */
+  border: 1px slid #ddd;
+}
+/* Thumbnail image */
+.post-thumbnail {
+  width: 100%; /* Take full width of the parent container */
+  aspect-ratio: 1; /* Make the thumbnail square */
+  object-fit: cover; /* Crop the image to fit the square */
+  display: block; /* Ensure it's treated as a block element */
+  padding-top: 50px;
 }
 
-.post-box {
-  width: 80%; /* Adjust width as needed for a more appropriate layout */
-  max-width: 600px; /* Set a maximum width for the post box */
-  margin: 25px 0; /* Add space between posts */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #f9f9f9;
-  padding: 15px;
-  text-align: center;
+/* Post content */
+.post-content {
+  padding: 20px; /* Add some space around the text */
+  text-align: center; /* Center-align the text */
 }
 
-.post-video {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-}
-
-.post-title {
+.post-content h2 {
+  font-size: 1.2rem;
   margin: 10px 0;
-  font-size: 1.2em;
-  color: #333;
 }
 
-.post-highlight {
+.post-content p {
+  font-size: 0.9rem;
   color: #555;
-  font-size: 0.9em;
-  margin-bottom: 10px;
+}
+
+.post-content a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
 }
 
 
-/* Pagination styling */
+
+
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px; /* Adjust spacing above pagination */
+  gap: 5px; /* Reduce space between elements */
+  margin-bottom: 5px;
 }
 
 .pagination button {
-    padding: 12px 25px;
-    margin: 0 10px;
-    background-color: #29d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 5px 10px; /* Smaller padding for buttons */
+  font-size: 0.8rem; /* Smaller font size */
+  background-color: #007bff; /* Button background */
+  color: white;
+  border: none;
+  border-radius: 3px; /* Round corners slightly */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .pagination button:hover {
-    background-color: #1a9cc4;
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.pagination button:disabled {
+  background-color: #ccc; /* Gray for disabled buttons */
+  cursor: not-allowed;
 }
 
 .pagination .page-number {
-    margin: 0 10px;
-    font-size: 1.5rem;
+  font-size: 0.8rem; /* Smaller font size for page numbers */
+  color: #333;
 }
 
 
@@ -354,3 +365,49 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+  #posts-container {
+    padding: 50px 10px; /* Reduce the container padding on small screens */
+  }
+
+  .post {
+    width: 90%; /* Make posts take 90% of the screen width */
+  }
+
+  .post-thumbnail {
+    height: 200px; /* Adjust the height of the thumbnail on small screens */
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .post {
+    width: 500px; /* Increase the width of posts on larger screens */
+  }
+
+  .post-thumbnail {
+    height: 350px; /* Make the thumbnails bigger on larger screens */
+  }
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  font-size: 2.5em;
+  color: #222327;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
