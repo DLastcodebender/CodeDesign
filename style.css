@@ -111,35 +111,6 @@ body, html {
     margin: 0;
 }
 
-/* Pagination styling */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 100px;
-}
-
-.pagination button {
-    padding: 12px 25px;
-    margin: 0 10px;
-    background-color: #29d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.pagination button:hover {
-    background-color: #1a9cc4;
-}
-
-.pagination .page-number {
-    margin: 0 10px;
-    font-size: 1.5rem;
-}
-
-
 h1 {
     font-size: 3em;
     font-family: 'Arial', sans-serif;
@@ -356,4 +327,125 @@ h1 {
   .adsense-container {
     width: 100%; /* Make the ad container 100% of the screen width on mobile */
   }
+}
+
+.container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Sliding text section */
+.text-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #282c34;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.sliding-text {
+    animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    25% { transform: translateX(0); }
+    75% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Post container and individual posts */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.post-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.post-box:hover {
+    transform: scale(1.05);
+}
+
+.post-video {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #333;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.post-highlight {
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.post-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* Adsense container styles */
+.adsense-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.prev, .next {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: #555;
+}
+
+.pagination span {
+    font-size: 1.2rem;
+    align-self: center;
 }
