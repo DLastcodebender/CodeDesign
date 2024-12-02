@@ -6,7 +6,7 @@
     <meta name="description" content="Learn how to create the Matrix Rain Effect with HTML, CSS, and JavaScript. Step-by-step guide and code snippets included.">
     <meta name="keywords" content="Matrix Rain Effect, HTML, CSS, JavaScript, Code Snippets, Programming Tutorials">
     <meta name="author" content="DLastCodeBender">
-    <title>Matrix Rain Effect</title>
+    <title>Welcome Home</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,6 +44,19 @@
     <div class="sliding-text">For innovation.</div>
     <div class="sliding-text">To push the limits of possibility.</div>
   </div>
+
+  <!--The auto post-->
+  <main>
+    <!-- Loop through all posts -->
+    {% for post in site.posts %}
+      <article>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+        <div>{{ post.excerpt }}</div>
+      </article>
+      <hr>
+    {% endfor %}
+  </main>
 
   <div class="content"> 
     <div class="post-container">
