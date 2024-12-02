@@ -14,3 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Fetch posts from the JSON file and display them on the homepage
+async function loadPosts() {
+  try {
+    // Fetch the posts data
+    const response = await fetch('posts.json');
+    const posts = await response.json();
+
+    // Sort posts by date (newest first)
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Generate HTML for each post
+    const container = document.getElementById('posts-container');
+    container.innerHTML = posts
+      .map(post => `
+        <div class="post">
+          <img src="${post.thumbnail}" alt="${post.title}" class="thumbnail">
+          <div class="post-content">
+            <h2>${post.title}</h2>
+            <p>${post.description}</p>
+            <a href="${post.link}">Read More</a>
+          </div>
+        </div>
+      `)
+      .join('');
+  } catch (error) {
+    console.error('Failed to load posts:', error);
+  }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', loadPosts);
