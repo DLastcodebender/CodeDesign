@@ -1,359 +1,222 @@
-/* Basic Reset */
+/* General styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Basic styling for the header */
+/* Background and effects */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: -1;
+}
+
+.radial-effect {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+    animation: radialAnimation 10s infinite;
+}
+
+@keyframes radialAnimation {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.5); opacity: 0.1; }
+}
+
+/* Header styles */
 header {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically align image and text */
-    color: black; /* Black text */
-    text-align: left; /* Align header content to the left */
-    padding: 20px; /* Space inside the header */
-    font-size: 1.5rem; /* Text size */
-    gap: 10px; /* Space between the image and the text */
-    padding-bottom: 120px;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-align: left;
+    padding: 20px;
+    font-size: 1.5rem;
+    gap: 10px;
 }
 
 header img {
-    width: 40px; /* Set the image width */
-    height: auto; /* Maintain aspect ratio */
+    width: 40px;
+    height: auto;
 }
 
-html, body {
-    height: 100%; /* Full height of the viewport */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove any padding */
-  }
-  
-  .background {
-    position: absolute;
-    inset: 0; /* Cover the entire page */
-    z-index: -10; /* Place behind the content */
-    height: 170%; /* Make it slightly taller for visual effect */
-    width: 100%; /* Full width */
-    background: white;
-    background: linear-gradient(to right, #f0f0f0 1px, transparent 1px), 
-                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
-    background-size: 8rem 8rem; /* Size of the grid pattern */
-  }
-  
-  .radial-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle 700px at 50% 200px, #C9EBFF, transparent);
-  }
-
-  /* Post container to center the posts */
-/* Reset default styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
+/* Container for the main content */
+.container {
+    text-align: center;
+    margin: 20px 0;
 }
 
-/* Post container to center the posts */
-.post-container {            /* Use flexbox for layout */           /* Allow wrapping if there are multiple posts */
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  text-align: center;       /* Set a maximum width for the container */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Sliding text section */
+.text-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #282c34;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.sliding-text {
+    animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    25% { transform: translateX(0); }
+    75% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Post container and individual posts */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .post-box {
-  width: 100%;              /* Set a fixed width for each post */
-  height: 350px;             /* Fixed height */
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
-/* Styling for the video */
+.post-box:hover {
+    transform: scale(1.05);
+}
+
 .post-video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+    height: auto;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-/* Styling for text content */
 .post-title {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    font-size: 1.2rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #333;
+    background-color: #f7f7f7;
+    text-align: center;
 }
 
 .post-highlight {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+    text-align: center;
+    padding: 10px;
     font-size: 1rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    margin: 0;
+    color: #333;
+    background-color: #f7f7f7;
 }
 
-/* Pagination styling */
+.post-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* Adsense container styles */
+.adsense-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 100px;
+    gap: 10px;
+    margin-top: 40px;
 }
 
-.pagination button {
-    padding: 12px 25px;
-    margin: 0 10px;
-    background-color: #29d;
+.prev, .next {
+    padding: 10px 20px;
+    background-color: #333;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.pagination button:hover {
-    background-color: #1a9cc4;
+.prev:hover, .next:hover {
+    background-color: #555;
 }
 
-.pagination .page-number {
-    margin: 0 10px;
-    font-size: 1.5rem;
+.pagination span {
+    font-size: 1.2rem;
+    align-self: center;
 }
 
-
-h1 {
-    font-size: 3em;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    opacity: 0; /* Start invisible */
-    animation: fade-in 1.5s ease-out forwards; /* Fade-in animation */
-    text-align: center;
-}
-
-/* Animation for fading in the text */
-@keyframes fade-in {
-    0% {
-        opacity: 0; /* Fully invisible */
-    }
-    100% {
-        opacity: 1; /* Fully visible */
-    }
-}
-
-
-/* Styling for the description below the header */
-.description {
-    text-align: center;
-    padding: 10px;
-}
-
-/* Static Text Styling */
-.static-text {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Sliding Text Container */
-.text-container {
-    text-align: center; /* Center the content horizontally */
-    margin-top: 20px;
-    margin-bottom: 150px;
-}
-
-/* Styling for each sliding text */
-.sliding-text {
-    display: inline-block; /* Allows the animation to apply to each text block */
-    opacity: 0; /* Initially hidden */
-    transform: translateY(40px); /* Start from 40px below */
-    animation: slide-up 2s ease-out forwards; /* Apply the slide-up animation */
-    margin: 20px 0; /* Space between texts */
-}
-
-/* Different delay for each text so they animate in sequence */
-.sliding-text:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.sliding-text:nth-child(2) {
-    animation-delay: 1s; /* 1 second delay for the second text */
-}
-
-.sliding-text:nth-child(3) {
-    animation-delay: 2s; /* 2 seconds delay for the third text */
-}
-
-/* Keyframes for the slide-up effect */
-@keyframes slide-up {
-    0% {
-        opacity: 0;
-        transform: translateY(40px); /* Start off below */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* End up at normal position */
-    }
-}
-
-/* New Slide-in Text Styling */
-h1 {
-    font-size: 3em;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    animation: fade-in 2.5s ease-out forwards;
-    text-align: center;
-}
-
-/* Animation for sliding text in from the right */
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Footer Styles */
-/* Footer Styles */
+/* Footer styles */
 .footer {
-    background: linear-gradient(to right, rgb(198, 201, 219), #eeeef2d5); /* Blue/white gradient */
-    color: black;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .footer-content {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .footer-left {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
-  .footer-left h2 {
-    font-size: 2rem;
-    margin: 0;
-  }
-  
-  .footer-left p {
-    font-size: 1rem;
-    font-style: italic;
-    margin-top: 10px;
-  }
-  
-  .footer-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer-links li {
+}
+
+.footer-left h2 {
+    font-size: 1.8rem;
     margin-bottom: 10px;
-  }
-  
-  .footer-links a {
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
     text-decoration: none;
-    color:  black;
-    font-size: 1.1rem;
-  }
-  
-  .footer-links a:hover {
-    color: #ff8c00; /* Hover color */
-  }
-  
-  .footer-socials {
+    font-size: 1rem;
+}
+
+.footer-socials {
     display: flex;
-    gap: 20px;
-  }
-  
-  .footer-socials .social-icon {
+    gap: 10px;
+}
+
+.footer-socials .social-icon {
+    color: white;
     font-size: 1.5rem;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .footer-socials .social-icon:hover {
-    color: #ff8c00; /* Hover color */
-  }
-  
-  .footer-bottom {
-    text-align: center;
+    transition: color 0.3s;
+}
+
+.footer-socials .social-icon:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
     margin-top: 20px;
     font-size: 1rem;
-    color: #cd1c40;
-  }
-  
-  .footer-bottom p {
-    margin: 0;
-  }
-  
-  /* Responsive design for small screens */
-  @media screen and (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-left {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  
-    .footer-links ul {
-      display: flex;
-      gap: 20px;
-    }
-  }
-  
-
-/* Container for AdSense */
-.adsense-container {
-  max-width: 100%; /* Allow the ad container to take full width */
-  width: 90%; /* Set the width to 90% of the screen width */
-  margin: 20px auto; /* Center the ad div */
-  text-align: center; /* Center the ad content */
 }
-
-/* Ensure ad iframe is responsive */
-.adsense-container iframe {
-  width: 100% !important; /* Ensure iframe takes full width */
-  height: auto !important; /* Maintain aspect ratio */
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .adsense-container {
-    width: 100%; /* Make the ad container 100% of the screen width on mobile */
-  }
-}
-
