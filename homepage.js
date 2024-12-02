@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Get all video elements
     const videos = document.querySelectorAll('.post-video');
+
+    const thumbnail = post.thumbnail; // Should match JSON key
+
     
     // Loop through each video element
     videos.forEach(video => {
