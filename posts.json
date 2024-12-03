@@ -2,14 +2,14 @@
     {
       "title": "Matrix Effect",
       "date": "2024-12-01",
-      "link": "Matrix Effect",
+      "link": "matrix-effect",
       "description": "Learn how to create the Matrix effect using HTML and CSS.",
       "thumbnail": "videos/matrix.jpg"
     },
     {
       "title": "Fireworks Animation",
       "date": "2024-12-02",
-      "link": "Firework Animation.html",
+      "link": "firework-animation",
       "description": "A stunning fireworks animation built with JavaScript.",
       "thumbnail": "videos/firework.jpg"
     }
