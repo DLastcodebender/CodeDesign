@@ -70,6 +70,7 @@ article {
 
 h2 {
   color: #333; /* Dark text for headings */
+  margin-bottom: 20px;
 }
 
 p {
@@ -178,6 +179,7 @@ body {
   height: 350px; /* Set the height to match the width */
   overflow: hidden; /* Crop any overflowed content */
   position: relative;
+  margin-bottom: 20px;
 }
 
 /* Video styling */
@@ -216,7 +218,7 @@ body {
 @media (max-width: 768px) {
   .code-box {
     width: 80%;
-    height: 50%;
+    height: 45%;
   }
 }
 
@@ -235,8 +237,14 @@ body {
   cursor: pointer;
   border-radius: 4px;
   position: relative;
-  right: -180px;
+  right: -160px;
 }
+@media (min-width: 1024px) {
+  .copy-btn {
+    right: -380px;
+  }
+}
+
 
 .copy-btn:hover {
   background-color: #555;
@@ -322,6 +330,53 @@ pre[class*="language-"], code {
 }
 
 
+
+section {
+  margin-left: 200px; /* Adjusted space for the left sidebar */
+  line-height: 1.5;
+  margin-right: 200px; /* Adjusted space for the right sidebar */
+  padding: 20px;
+  max-width: 700px; /* Set a maximum width for the content */
+  margin-left: auto;
+  margin-right: auto; /* Center the content horizontally */
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-left: 20px; /* Reduced margin on left for smaller screens */
+    margin-right: 20px; /* Reduced margin on right for smaller screens */
+  }
+
+  /* Make article content take up more width on mobile */
+  article {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading font size for smaller screens */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph font size for better readability */
+    line-height: 2;
+  }
+
+  ul {
+    font-size: 1rem; /* Adjust list font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even further adjustments for very small screens like phones in portrait mode */
+  .main-content {
+    margin-left: 10px; /* Even smaller margin for ultra-small screens */
+    margin-right: 10px;
+  }
+
+  article {
+    padding: 10px; /* Reduce padding on very small screens */
+  }
+}
 
 .nav-link:hover::after {
   content: ''; /* Add a decorative underline effect */
