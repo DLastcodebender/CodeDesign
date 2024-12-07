@@ -12,5 +12,12 @@
     "link": "firework-animation",
     "description": "A stunning fireworks animation built with JavaScript.",
     "thumbnail": "/assets/images/firework.jpg"
+  },
+  {
+    "title": "Magic Navigation Menu",
+    "date": "2024-12-07",
+    "link": "magic-menu-indicator",
+    "description": "The Magic Navigation Menu Indicator: A Game-Changer for Modern Websites",
+    "thumbnail": "/assets/images/magic-menu.jpg"
   }
 ]
