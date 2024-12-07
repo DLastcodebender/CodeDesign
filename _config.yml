@@ -17,23 +17,54 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+# Site settings
+title: D'Last Code Bender
+email: dlastcodebender@gmail.com
+description: >-
+  Welcome to D'Last Code Bender! A site showcasing coding tutorials, tips, and tricks. 
+  Explore the world of code and creativity with us.
+baseurl: "" # Leave empty for root domain (https://dlastcodebender.com.ng)
+url: "https://dlastcodebender.com.ng" # Full URL of your site
+twitter_username: dlastcodebender
+github_username: dlastcodebender
+
+# Permalink structure for clean URLs (no .html)
 permalink: /:title/
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+# Theme settings
+theme: minima # Default theme
+plugins:
+  - jekyll-feed # Generates RSS feeds
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - _site/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+
+# Include additional files to process
+include:
+  - assets/ # Ensures assets like CSS/JS/JSON are included
+  - posts.json
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM # GitHub-flavored Markdown for compatibility
+
+# Collections
+collections:
+  posts:
+    output: true # Generates a /:title/ permalink for each post
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+future: true # Publish posts with future dates
+relative_permalinks: false # Ensures absolute URLs work properly
+
 
 
 

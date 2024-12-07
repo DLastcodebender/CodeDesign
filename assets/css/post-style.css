@@ -1,0 +1,394 @@
+/* Styling for Ad Box */
+.ad-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  max-width: 300px;
+  background: white; /* White background for each ad */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures content doesn’t spill out */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for ads */
+}
+
+.ad-box img {
+  width: 100%; /* Ad image spans full width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+.ad-box a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.ad-box p {
+  font-size: 14px; /* Smaller text size for descriptions */
+  color: #555; /* Gray text color for ad description */
+  margin: 0; /* Remove margin */
+}
+
+/* Sidebar Styling for AdSense */
+.sidebar {
+  position: fixed; /* Sidebar stays fixed on the sides */
+  top: 50%; /* Centers the sidebar vertically */
+  transform: translateY(-50%); /* Centers it perfectly */
+  width: 300px; /* Wider for ads */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Text color */
+  padding: 10px; /* Inner spacing */
+  box-shadow: none; /* Remove shadow */
+  z-index: 1000; /* Keeps it on top of other content */
+}
+
+.sidebar.left {
+  left: 0; /* Sidebar on the left */
+}
+
+.sidebar.right {
+  right: 0; /* Sidebar on the right */
+}
+
+/* Main content */
+.main-content {
+  margin-left: 200px; /* Adjusted space for the left sidebar */
+  margin-right: 200px; /* Adjusted space for the right sidebar */
+  padding: 20px;
+  max-width: 700px; /* Set a maximum width for the content */
+  margin-left: auto;
+  margin-right: auto; /* Center the content horizontally */
+}
+
+/* Article styling */
+article {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #333; /* Dark text for headings */
+}
+
+p {
+  margin-bottom: 10px; /* Spacing between paragraphs */
+}
+
+ul {
+  margin-left: 20px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 20px; /* Reduced margin on left for smaller screens */
+    margin-right: 20px; /* Reduced margin on right for smaller screens */
+  }
+
+  /* Make article content take up more width on mobile */
+  article {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading font size for smaller screens */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph font size for better readability */
+  }
+
+  ul {
+    font-size: 1rem; /* Adjust list font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even further adjustments for very small screens like phones in portrait mode */
+  .main-content {
+    margin-left: 10px; /* Even smaller margin for ultra-small screens */
+    margin-right: 10px;
+  }
+
+  article {
+    padding: 10px; /* Reduce padding on very small screens */
+  }
+}
+
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  /* Left Sidebar on Mobile */
+  .sidebar.left {
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    top: 0;
+    right: 0;
+    transform: none; /* Reset transformations */
+    width: 100%; /* Sidebar takes full width */
+    margin-top: 20px; /* Add space above the sidebar */
+  }
+
+  /* Right Sidebar on Mobile */
+  .sidebar.right {
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    top: 0;
+    right: 0;
+    transform: none; /* Reset transformations */
+    width: 100%; /* Sidebar takes full width */
+    margin-top: 20px; /* Add space above the sidebar */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove sidebar spacing */
+    margin-right: 0; /* Remove sidebar spacing */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Responsive Post Video */
+.post-video {
+  width: 100%;
+  height: auto;
+}
+
+/* Basic styling for the header */
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  color: black;
+}
+
+/* Post Media */
+/* Video wrapper to create a square container */
+.video-wrapper {
+  width: 100%; /* Set the width to your desired square size */
+  height: 350px; /* Set the height to match the width */
+  overflow: hidden; /* Crop any overflowed content */
+  position: relative;
+}
+
+/* Video styling */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fills the square container while maintaining its aspect ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+  
+  font-family: monospace;
+  margin: 0;
+  padding: 20px;
+}
+
+.code-box {
+  background-color: #1e1e1e; /* Slightly lighter background for the code box */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: monospace;
+  margin: 2;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .code-box {
+    width: 80%;
+    height: 50%;
+  }
+}
+
+
+
+.code-type {
+  font-size: x-small;
+}
+
+.copy-btn {
+  background-color: #333;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+  right: -180px;
+}
+
+.copy-btn:hover {
+  background-color: #555;
+}
+
+pre {
+  background-color: #111; /* Background for the code area */
+  padding: 15px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  overflow: auto; /* Ensure that long lines of code are scrollable */
+}
+
+pre[class*="language-"], code {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 10px; /* Add some spacing inside the code block */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 200px; /* Limit the height of the code block */
+  white-space: pre-wrap; /* Allow the code to wrap within the block */
+  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+  font-size: x-small;
+  height: fit-content;
+}
+
+/* Navigation Bar Styling */
+/* Navigation Bar Styling */
+/* Navigation Bar */
+/* Navigation Bar */
+.navbar {
+  width: 14%;
+  max-width: 30%;
+  display: flex; /* Flexbox for side-by-side alignment */
+  justify-content: space-between; /* Space between navbar items */
+  align-items: center; /* Vertically center items */
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth transitions */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  animation: navbar-slide-in 1s ease; /* Navbar slide-in animation */
+}
+
+/* Navbar Links */
+.nav-list {
+  display: flex; /* Ensure items are in a row */
+  gap: 20px; /* Space between items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none; /* Remove default underline */
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7eb3, #00f2fe); /* Gradient colors */
+  -webkit-background-clip: text; /* Apply gradient to text */
+  -webkit-text-fill-color: transparent; /* Make background visible through text */
+  background-clip: text; /* Fallback */
+  position: relative;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
+}
+
+/* Custom underline effect */
+.nav-link::after {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust position below the text */
+  width: 0; /* Start with no underline */
+  height: 2px; /* Thickness of the underline */
+  background: linear-gradient(90deg, #ff7eb3, #00f2fe); /* Gradient underline */
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+
+
+.nav-link:hover::after {
+  content: ''; /* Add a decorative underline effect */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 3px;
+  background: linear-gradient(90deg, #00f2fe, #ff7eb3); /* Gradient underline */
+  animation: underline-slide-in 0.4s ease forwards;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    width: 56%; /* Take up more width on mobile */
+    max-width: 80%; /* Ensure it doesn't go beyond the viewport */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .nav-list {
+    display: flex; /* Keep items in a row */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    justify-content: space-between; /* Space out items */
+    gap: 15px; /* Adjust spacing between items */
+  }
+
+  .nav-link {
+    font-size: 1.2rem; /* Slightly larger font for mobile */
+    transition: background 0.3s ease, transform 0.3s ease; /* Maintain hover animation */
+  }
+
+  .nav-link:hover {
+    transform: scale(1.2); /* Keep hover zoom for mobile */
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.6); /* Glowing text effect on hover */
+  }
+}
+
+/* Keyframes for Animations */
+@keyframes navbar-slide-in {
+  from {
+    transform: translateY(-50px); /* Navbar starts above the screen */
+    opacity: 0; /* Hidden at first */
+  }
+  to {
+    transform: translateY(0); /* Slides into view */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes underline-slide-in {
+  from {
+    width: 0; /* Starts with no underline */
+  }
+  to {
+    width: 100%; /* Full underline */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

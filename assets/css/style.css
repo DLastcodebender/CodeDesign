@@ -368,3 +368,121 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+  #posts-container {
+    padding: 50px 10px; /* Reduce the container padding on small screens */
+  }
+
+  .post {
+    width: 90%; /* Make posts take 90% of the screen width */
+  }
+
+  .post-thumbnail {
+    height: 200px; /* Adjust the height of the thumbnail on small screens */
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .post {
+    width: 500px; /* Increase the width of posts on larger screens */
+  }
+
+  .post-thumbnail {
+    height: 350px; /* Make the thumbnails bigger on larger screens */
+  }
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  font-size: 2.5em;
+  color: #222327;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+
+.icon-image {
+  height: auto;
+  width: 250px;
+}
+
+@media (max-width: 768px) {
+  .icon-image {
+    width: 210px;
+    margin-left: -20px;
+
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Vertically align icon and logo */
+  gap: 10px; /* Add spacing between the two images */
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* General styling */
+
+.ads-container {
+  display: flex;
+  gap: 20px; /* Space between the ad boxes */
+}
+
+.ads-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically (if needed) */
+  gap: 20px;              /* Space between ad boxes */
+  margin: 20px 0;         /* Add some spacing around the ads section */
+}
+.ad-box {
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  height: 250px;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+  /* Hide the second and third boxes on mobile */
+  .ad-box:nth-child(2),
+  .ad-box:nth-child(3) {
+    display: none;
+  }
+
+  /* Make the remaining box centered and full-width */
+  .ads-wrapper {
+    justify-content: center; /* Center the single box */
+  }
+
+  .ad-box {
+    width: 100%; /* Full width for the single box */
+  }
+}

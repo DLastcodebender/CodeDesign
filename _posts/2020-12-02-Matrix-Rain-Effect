@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="/path/to/styles/default.css"/>
     <script src="/path/to/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <link rel="stylesheet" href="\assets\css\post-style.css">
-    <link rel="stylesheet" href="\assets\css\style.css">
+    <link rel="stylesheet" href="post-style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script type='text/javascript' src='//pl25159117.profitablecpmrate.com/3a/15/0d/3a150dd11ba295e2518413865f21c92e.js'></script>
@@ -24,48 +24,10 @@
   </head>
   <body>
 
-      <!-- Header Section -->
-      <header>
-        <div class="logo-container">
-          <a href="https://DLastCodeBender.com.ng">
-            <img src="logo.png" alt="Web Page Icon" class="icon-image">
-          </a>
-        </div>
-        <script type='text/javascript' src='//pl25159117.profitablecpmrate.com/3a/15/0d/3a150dd11ba295e2518413865f21c92e.js'></script>
-      </header>
-      
-      <div class="ads-wrapper">
-        <div class="ad-box"><script type="text/javascript">
-          atOptions = {
-            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
-        <div class="ad-box"><script type="text/javascript">
-          atOptions = {
-            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
-        <div class="ad-box"><script type="text/javascript">
-          atOptions = {
-            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
-      </div>
+    <header>
+      <img src="web-page-icon.svg" alt="Web Page Icon">
+      DLastCodeBender
+    </header>
 
 <div class="main-content">
   <article>
@@ -160,7 +122,7 @@
 
 <div class="code-box">
   <div class="header">
-    <span class="code-type">js</span>
+    <span class="code-type">javascript</span>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
   </div>
   <pre><code class="code language-javascript">// Select the canvas and set its size
@@ -214,12 +176,11 @@
 </div>
 <!-- Navigation Bar -->
 <!-- Navigation Bar -->
-<nav class="navbar">
-  <ul class="nav-list">
-    <li><a href="/matrix-effect" class="nav-link active">Prev</a></li>
-    <li><a href="https://DLastCodeBender.com.ng" class="nav-link">Home</a></li>
-    <li><a href="/Next-post" class="nav-link">Next</a></li>
-  </ul>
+<nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="/next-post">Next Post</a>
+  </div>
 </nav>
 
 
@@ -252,26 +213,26 @@
     </a>
   </div>-->
 </div>
-<script src="\assets\js\post1.js"></script> <!-- Link to your JavaScript file -->
+<script src="post1.js"></script> <!-- Link to your JavaScript file -->
 
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-left">
       <h2>DLastCodeBender</h2>
+  
     </div>
     <div class="footer-links">
       <ul>
-          <li><a href="https://DLastCodeBender.com.ng">Home</a></li>
-          <li><a href="https://DLastCodeBender.com.ng/about.html">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
     <div class="footer-socials">
-      <a href="https://www.tiktok.com/@dlastcodebender" class="social-icon"><i class="fab fa-tiktok"></i></a>
-      <a href="https://web.facebook.com/DLastCodeBender/" class="social-icon"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/dlastcodebender_/" class="social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@DLastCodeBender" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
   <div class="footer-bottom">

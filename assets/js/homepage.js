@@ -1,6 +1,6 @@
 // Number of posts to display per page
-const postsPerPage = 5; // You can adjust this value as needed
-let currentPage = 1; // Start at the first page
+const postsPerPage = 5;
+let currentPage = 1;
 let totalPages = 1;
 
 // Load posts and dynamically handle image thumbnails
@@ -8,6 +8,7 @@ async function loadPosts() {
   try {
     // Fetch the posts data
     const response = await fetch('/assets/posts.json');
+    if (!response.ok) throw new Error('Network response was not ok');
     const posts = await response.json();
 
     // Sort posts by date (newest first)
@@ -23,6 +24,10 @@ async function loadPosts() {
     displayPagination();
   } catch (error) {
     console.error('Failed to load posts:', error);
+
+    // Display error message in the posts container
+    const container = document.getElementById('posts-container');
+    container.innerHTML = `<p class="error-message">Failed to load posts. Please try again later.</p>`;
   }
 }
 
@@ -41,12 +46,11 @@ function displayPosts(posts, page) {
     .map(
       (post) => `
       <div class="post">
-        <!-- Image thumbnail -->
         <img class="post-thumbnail" src="${post.thumbnail}" alt="${post.title}">
         <div class="post-content">
           <h2>${post.title}</h2>
           <p>${post.description}</p>
-          <a href="${post.link}">Read More</a>
+          <a href="${post.link}" target="_blank">Read More</a>
         </div>
       </div>
     `
@@ -65,7 +69,7 @@ function displayPagination() {
   prevButton.disabled = currentPage === 1;
   prevButton.addEventListener('click', () => {
     currentPage--;
-    loadPosts(); // Reload posts for the new page
+    loadPosts();
   });
   paginationContainer.appendChild(prevButton);
 
@@ -81,7 +85,7 @@ function displayPagination() {
   nextButton.disabled = currentPage === totalPages;
   nextButton.addEventListener('click', () => {
     currentPage++;
-    loadPosts(); // Reload posts for the new page
+    loadPosts();
   });
   paginationContainer.appendChild(nextButton);
 }
@@ -89,34 +93,7 @@ function displayPagination() {
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', loadPosts);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Copy code functionality
 function copyCode(button) {
   const codeText = button.closest('.code-box').querySelector('code').innerText;
   const textarea = document.createElement('textarea');
@@ -126,76 +103,48 @@ function copyCode(button) {
   document.execCommand('copy');
   document.body.removeChild(textarea);
 
-  // Change the button text to 'Copied✔️' after clicking
   button.innerText = 'Copied✔️';
-
-  // Optional: Reset button text back to 'Copy' after 2 seconds
   setTimeout(() => {
     button.innerText = 'Copy';
   }, 2000);
 }
 
-
-
-
-// Open and Close Navbar Menu
-const navbarMenu = document.getElementById("menu");
-const burgerMenu = document.getElementById("burger");
-const bgOverlay = document.querySelector(".overlay");
+// Navbar Menu Toggle
+const navbarMenu = document.getElementById('menu');
+const burgerMenu = document.getElementById('burger');
+const bgOverlay = document.querySelector('.overlay');
 
 if (burgerMenu && bgOverlay) {
-   burgerMenu.addEventListener("click", () => {
-      navbarMenu.classList.add("is-active");
-      bgOverlay.classList.toggle("is-active");
-   });
+  burgerMenu.addEventListener('click', () => {
+    navbarMenu.classList.add('is-active');
+    bgOverlay.classList.toggle('is-active');
+  });
 
-   bgOverlay.addEventListener("click", () => {
-      navbarMenu.classList.remove("is-active");
-      bgOverlay.classList.toggle("is-active");
-   });
+  bgOverlay.addEventListener('click', () => {
+    navbarMenu.classList.remove('is-active');
+    bgOverlay.classList.toggle('is-active');
+  });
 }
 
 // Close Navbar Menu on Links Click
-document.querySelectorAll(".menu-link").forEach((link) => {
-   link.addEventListener("click", () => {
-      navbarMenu.classList.remove("is-active");
-      bgOverlay.classList.remove("is-active");
-   });
+document.querySelectorAll('.menu-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    navbarMenu.classList.remove('is-active');
+    bgOverlay.classList.remove('is-active');
+  });
 });
 
 // Open and Close Search Bar Toggle
-const searchBlock = document.querySelector(".search-block");
-const searchToggle = document.querySelector(".search-toggle");
-const searchCancel = document.querySelector(".search-cancel");
+const searchBlock = document.querySelector('.search-block');
+const searchToggle = document.querySelector('.search-toggle');
+const searchCancel = document.querySelector('.search-cancel');
 
 if (searchToggle && searchCancel) {
-   searchToggle.addEventListener("click", () => {
-      searchBlock.classList.add("is-active");
-   });
+  searchToggle.addEventListener('click', () => {
+    searchBlock.classList.add('is-active');
+  });
 
-   searchCancel.addEventListener("click", () => {
-      searchBlock.classList.remove("is-active");
-   });
+  searchCancel.addEventListener('click', () => {
+    searchBlock.classList.remove('is-active');
+  });
 }
-
-
-
-
-
-
-
-
-
-
-
-// Toggle search block on click
-searchToggle.addEventListener('click', () => {
-  searchBlock.classList.add('is-active');
-});
-
-// Close search block on cancel button click
-searchCancel.addEventListener('click', () => {
-  searchBlock.classList.remove('is-active');
-});
-
-
