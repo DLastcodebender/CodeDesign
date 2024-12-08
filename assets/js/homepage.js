@@ -50,7 +50,7 @@ function displayPosts(posts, page) {
         <div class="post-content">
           <h2>${post.title}</h2>
           <p>${post.description}</p>
-          <a href="${post.link}" target="_blank">Read More</a>
+          <a href="${post.link}">Read More</a>
         </div>
       </div>
     `

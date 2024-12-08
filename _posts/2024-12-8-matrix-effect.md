@@ -1,33 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to create the Matrix Rain Effect with HTML, CSS, and JavaScript. Step-by-step guide and code snippets included.">
-    <meta name="keywords" content="Matrix Rain Effect, HTML, CSS, JavaScript, Code Snippets, Programming Tutorials">
-    <meta name="author" content="DLastCodeBender">
-    <title>Matrix Rain Effect</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/path/to/styles/default.css"/>
-    <script src="/path/to/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <link rel="stylesheet" href="\assets\css\post-style.css">
-    <link rel="stylesheet" href="\assets\css\style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <script type='text/javascript' src='//pl25159117.profitablecpmrate.com/3a/15/0d/3a150dd11ba295e2518413865f21c92e.js'></script>
+---
+layout: default   # The layout to use (defined in _layouts folder)
+title: "Matrix Effect"   # The title of the page
+permalink: /marix-effect/  # The URL slug for the page
+---
 
-  </head>
-  <body>
 
-    <header>
-      <img src="web-page-icon.svg" alt="Web Page Icon">
-      DLastCodeBender
-    </header>
+<div class="ads-wrapper">
+        <div class="ad-box"><script type="text/javascript">
+          atOptions = {
+            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
+        <div class="ad-box"><script type="text/javascript">
+          atOptions = {
+            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
+        <div class="ad-box"><script type="text/javascript">
+          atOptions = {
+            'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/bca3e9c41fe8834381ea2437ab5011f5/invoke.js"></script></div>
+      </div>
 
 <div class="main-content">
   <article>
@@ -40,7 +49,7 @@
     The Matrix Effect
   </h1>  
     <div class="video-wrapper">
-      <video class="video" src="XiaoYing_Video_1732915375439_HD.mp4" autoplay loop muted class="post-video"></video>
+      <video class="video" src="/assets/images/XiaoYing_Video_1732915375439_HD.mp4" autoplay loop muted class="post-video"></video>
     </div>
     <h2>What is the Matrix Rain Effect?</h2>
       <p>The Matrix Rain Effect is a captivating visual animation inspired by the movie The Matrix (1999). In the film, it represents computer code—a series of glowing green letters, numbers, and symbols cascading down a black screen like digital rain. This effect has since become a cultural icon in the tech world, symbolizing coding, digital reality, and the virtual world.
@@ -122,7 +131,7 @@
 
 <div class="code-box">
   <div class="header">
-    <span class="code-type">javascript</span>
+    <span class="code-type">js</span>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
   </div>
   <pre><code class="code language-javascript">// Select the canvas and set its size
@@ -176,11 +185,12 @@
 </div>
 <!-- Navigation Bar -->
 <!-- Navigation Bar -->
-<nav>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="/next-post">Next Post</a>
-  </div>
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a href="/matrix-effect" class="nav-link active">Prev</a></li>
+    <li><a href="https://DLastCodeBender.com.ng" class="nav-link">Home</a></li>
+    <li><a href="/firework-animation" class="nav-link">Next</a></li>
+  </ul>
 </nav>
 
 
@@ -214,33 +224,3 @@
   </div>-->
 </div>
 <script src="\assets\js\post1.js"></script> <!-- Link to your JavaScript file -->
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-left">
-      <h2>DLastCodeBender</h2>
-  
-    </div>
-    <div class="footer-links">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-socials">
-      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 DLastCodeBender | All Rights Reserved</p>
-  </div>
-</footer>
-
-
-
-  </body>
-</html>

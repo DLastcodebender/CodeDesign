@@ -1,40 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to create the Matrix Rain Effect with HTML, CSS, and JavaScript. Step-by-step guide and code snippets included.">
-    <meta name="keywords" content="Firework Animation, HTML, CSS, JavaScript, Code Snippets, Programming Tutorials">
-    <meta name="author" content="DLastCodeBender">
-    <title>Firework Animation</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/path/to/styles/default.css"/>
-    <script src="/path/to/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <link rel="stylesheet" href="\assets\css\post-style.css">
-    <link rel="stylesheet" href="\assets\css\style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <script type='text/javascript' src='//pl25159117.profitablecpmrate.com/3a/15/0d/3a150dd11ba295e2518413865f21c92e.js'></script>
-    <script src="script.js"></script>
-  </head>
-  <body>
-      <!-- Header Section -->
-  <header>
-    <div class="logo-container">
-      <a href="https://DLastCodeBender.com.ng">
-        <img src="logo.png" alt="Web Page Icon" class="icon-image">
-      </a>
-    </div>
-    <script type='text/javascript' src='//pl25159117.profitablecpmrate.com/3a/15/0d/3a150dd11ba295e2518413865f21c92e.js'></script>
-  </header>
-  
-  <div class="ads-wrapper">
+---
+layout: default   # The layout to use (defined in _layouts folder)
+title: "Firework Animation"   # The title of the page
+permalink: /firework-animation/  # The URL slug for the page
+---
+
+
+
+
+
+<div class="ads-wrapper">
     <div class="ad-box"><script type="text/javascript">
       atOptions = {
         'key' : 'bca3e9c41fe8834381ea2437ab5011f5',
@@ -68,19 +42,17 @@
   </div>
 
 
-    <div class="main-content">
+  <div class="main-content">
       <article>
       <h1 style="
         text-align: center; 
         margin: 50px 0; 
         font-size: 2.5rem; 
-        color: green;
-      ">
-        Firework Effect
-      </h1>  
+        color: green;">Firework Effect</h1>  
+  
   <div class="main-content"> 
     <div class="video-wrapper">
-      <video class="video" src="XiaoYing_Video_1733149864037_HD.mp4" autoplay loop muted class="post-video"></video>
+      <video class="video" src="/assets/images/XiaoYing_Video_1733149864037_HD.mp4" autoplay loop muted class="post-video"></video>
     </div>
     <section>
       <h2>A Dynamic Visual Display: Fireworks Animation</h2>
@@ -310,7 +282,7 @@
   <ul class="nav-list">
     <li><a href="/matrix-effect" class="nav-link active">Prev</a></li>
     <li><a href="https://DLastCodeBender.com.ng" class="nav-link">Home</a></li>
-    <li><a href="/Next-post" class="nav-link">Next</a></li>
+    <li><a href="/magic-menu-indicator" class="nav-link">Next</a></li>
   </ul>
 </nav>
 
@@ -346,33 +318,3 @@
 </div>
 <script src="\assets\js\post1.js"></script>
 <link rel="stylesheet" href="\assets\css\navbar.css"> <!-- Link to your JavaScript file -->
-
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-left">
-      <h2>DLastCodeBender</h2>
-    </div>
-    <div class="footer-links">
-      <ul>
-          <li><a href="https://DLastCodeBender.com.ng">Home</a></li>
-          <li><a href="https://DLastCodeBender.com.ng/about.html">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-socials">
-      <a href="https://www.tiktok.com/@dlastcodebender" class="social-icon"><i class="fab fa-tiktok"></i></a>
-      <a href="https://web.facebook.com/DLastCodeBender/" class="social-icon"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/dlastcodebender_/" class="social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@DLastCodeBender" class="social-icon"><i class="fab fa-youtube"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 DLastCodeBender | All Rights Reserved</p>
-  </div>
-</footer>
-
-
-
-  </body>
-</html>
