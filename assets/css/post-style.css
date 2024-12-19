@@ -333,7 +333,7 @@ pre[class*="language-"], code {
 
 section {
   margin-left: 200px; /* Adjusted space for the left sidebar */
-  line-height: 1.5;
+  line-height: 2.0;
   margin-right: 200px; /* Adjusted space for the right sidebar */
   padding: 20px;
   max-width: 700px; /* Set a maximum width for the content */
