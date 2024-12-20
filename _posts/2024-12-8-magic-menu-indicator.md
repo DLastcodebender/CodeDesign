@@ -362,7 +362,7 @@ permalink: /magic-menu-indicator/  # The URL slug for the page
       <ul class="nav-list">
         <li><a href="/firework-animation" class="nav-link active">Prev</a></li>
         <li><a href="https://DLastCodeBender.com.ng" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">Next</a></li>
+        <li><a href="/broken-rectangle" class="nav-link">Next</a></li>
       </ul>
 </nav>
     
